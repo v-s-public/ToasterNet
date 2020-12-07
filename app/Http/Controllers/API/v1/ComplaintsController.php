@@ -49,7 +49,7 @@ class ComplaintsController extends Controller
         try {
             $model = Complaint::findOrFail($id);
             $model->takeToWork();
-            return response()->json(['data' => $model->toArray()], 204);
+            return response()->json(['data' => $model], 200);
         } catch (\Exception $e) {
             return response()->json(['errors' => ['complaint' => 'Complaint not found']], 422);
         }

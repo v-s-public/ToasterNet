@@ -10,4 +10,9 @@ class Client extends Model
     public $primaryKey = 'client_id';
 
     public $timestamps = false;
+
+    public $fillable = [
+        'name',
+        'address'
+    ];
 }

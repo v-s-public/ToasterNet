@@ -25,6 +25,11 @@ class Complaint extends Model
         $this->attributes['title'] = Str::cleanString($value);
     }
 
+    public function getInWorkAttribute($value)
+    {
+        return (boolean) $value;
+    }
+
     /**
      * Set In Work status to true
      */

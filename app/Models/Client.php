@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
@@ -15,4 +14,9 @@ class Client extends Model
         'name',
         'address'
     ];
+
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class, 'client_id');
+    }
 }
